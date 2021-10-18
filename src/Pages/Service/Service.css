@@ -1,0 +1,20 @@
+.card img{
+height: 250px;
+}
+.card{
+    height: 500px;
+    text-align: start;
+}
+.card-title{
+padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.service{
+    width: 200px;
+}
+
+.service-btn{
+    text-align: center;
+
+}
