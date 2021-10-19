@@ -4,8 +4,7 @@ const useProduct = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-
-        fetch('./fakedata.json')
+        fetch('/servicesdetails.json')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

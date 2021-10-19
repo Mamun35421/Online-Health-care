@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Container, Nav, Navbar, NavLink, Row } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Header.css'
@@ -23,7 +23,6 @@ const Header = () => {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={Link} to='/home'>Home</Nav.Link>
                         <Nav.Link as={Link} to='/about'>About</Nav.Link>
-                        <Nav.Link as={Link} to='/services'>Services</Nav.Link>
                         <Nav.Link as={Link} to='/reviews'>Reviews</Nav.Link>
                         {user?.email ?
                             <Button onClick={logOut} variant='light'>LogOut</Button> :
