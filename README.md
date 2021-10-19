@@ -1,6 +1,6 @@
 # NH ONLINE COURSES
 
-Netlify Link [24hr Health Care Center](https://hr-health-care-center.web.app/).
+Firebase Link [24hr Health Care Center](https://hr-health-care-center.web.app/).
 
 # Most key points from this assignment is ?
 Firebase
