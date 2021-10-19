@@ -3,11 +3,9 @@ import './App.css';
 import Banner from './Pages/Shared/Banner/Banner';
 import Header from './Pages/Shared/Header/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Footer from './Pages/Shared/Footer/Footer';
 import Home from './Pages/Home/Home';
 import NotFound from './Pages/NotFound/NotFound';
 import Booking from './Pages/Booking/Booking';
-import Services from './Pages/Services/Services';
 import About from './Pages/About/About';
 import Reviews from './Pages/Reviews/Reviews';
 import Login from './Pages/Login/Login/Login';
@@ -46,7 +44,7 @@ function App() {
             <PrivateRoute path='/booking/:serviceId'>
               <Booking></Booking>
             </PrivateRoute>
-            
+
             <Route path='*'>
               <NotFound></NotFound>
             </Route>

@@ -5,6 +5,9 @@ height: 220px;
     height: 500px;
     text-align: start;
 }
+.fullbody{
+    margin-bottom: 50px;
+}
 .card-title{
 padding-top: 20px;
     padding-bottom: 20px;
