@@ -1,9 +1,14 @@
 import React from 'react';
-import { Col, Container, Nav, Navbar, NavLink, Row } from 'react-bootstrap';
+import { Button, Col, Container, Nav, Navbar, NavLink, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import './Header.css'
 
+
 const Header = () => {
+    const { user, logOut } = useAuth();
+
+
     return (
         <>
             <Navbar bg="dark" variant="dark" collapseOnSelect expand="lg">
@@ -11,7 +16,7 @@ const Header = () => {
 
 
                     <Navbar.Brand href="#home" className='banner-logo justify-content-start'>
-                        <img src='https://lh3.googleusercontent.com/proxy/q-LGYaiTt9dGgDZ7YBV1MbEapY6gvDHEFhNPkxcXSCJSWRrZDTScYoCSe4Qgsp396J7lhiuI_KK1iJx20tbeAjPW_cxONvA348wJaYI7sH3kxrkxiOTT9y7bzUTbnor4KxqxvYvj5gnc-SuGf_9S4TyPd4VQqQcBjzG25mNY_V6U-6wIMGjaz-9-pkJpAg' alt="" />
+                        <img src='https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/vproject291batch36-nunoon-43-medical_2.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=d5876e2c3131ea957bbda9cd45c67c7f' alt="" />
                     </Navbar.Brand>
 
                     <Navbar.Toggle />
@@ -20,9 +25,12 @@ const Header = () => {
                         <Nav.Link as={Link} to='/about'>About</Nav.Link>
                         <Nav.Link as={Link} to='/services'>Services</Nav.Link>
                         <Nav.Link as={Link} to='/reviews'>Reviews</Nav.Link>
-                        <Nav.Link as={Link} to='/login'>Reviews</Nav.Link>
+                        {user?.email ?
+                            <Button onClick={logOut} variant='light'>LogOut</Button> :
+
+                            <Nav.Link as={Link} to='/login'>Login</Nav.Link>}
                         <Navbar.Text>
-                            Signed in as: <a href="#login">Mark Otto</a>
+                            Signed in as: <a href="#login">{user?.displayName}</a>
                         </Navbar.Text>
                     </Navbar.Collapse>
 

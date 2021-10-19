@@ -6,6 +6,7 @@ const Booking = () => {
     return (
         <div>
             <h1>This is booking No: {serviceId}</h1>
+
         </div>
     );
 };

@@ -10,43 +10,50 @@ import Booking from './Pages/Booking/Booking';
 import Services from './Pages/Services/Services';
 import About from './Pages/About/About';
 import Reviews from './Pages/Reviews/Reviews';
+import Login from './Pages/Login/Login/Login';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
 
+            <Route path='/home'>
+              <Home></Home>
+            </Route>
 
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route exact path='/'>
-            <Home></Home>
-          </Route>
+            <Route path='/services'>
+              <Services></Services>
+            </Route>
+            <PrivateRoute path='/about'>
+              <About></About>
+            </PrivateRoute>
+            <PrivateRoute path='/reviews'>
+              <Reviews></Reviews>
+            </PrivateRoute>
 
-          <Route path='/home'>
-            <Home></Home>
-          </Route>
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
 
-          <Route path='/services'>
-            <Services></Services>
-          </Route>
-          <Route path='/about'>
-            <About></About>
-          </Route>
-          <Route path='/reviews'>
-            <Reviews></Reviews>
-          </Route>
+            <PrivateRoute path='/booking/:serviceId'>
+              <Booking></Booking>
+            </PrivateRoute>
+            <Route path='*'>
+              <NotFound></NotFound>
+            </Route>
 
-          <Route path='/booking/:serviceId'>
-            <Booking></Booking>
-          </Route>
-          <Route path='*'>
-            <NotFound></NotFound>
-          </Route>
-
-        </Switch>
-      </Router>
+          </Switch>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
