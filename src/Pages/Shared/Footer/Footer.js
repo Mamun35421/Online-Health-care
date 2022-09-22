@@ -13,11 +13,11 @@ const Footer = () => {
         <div className='container-footer'>
             <div className="row">
                 <div className="col-md-4">
-                    <p>NH Course Zone{element}</p>
-                    <h3>{element2} 0172524295*</h3>
+                    <p>MR Course Zone{element}</p>
+                    <h3>{element2} 01400*</h3>
 
-                    <small>{element3}  H:202 R:45 Sector:10</small>
-                    <p>Uttara Dhaka 1230</p>
+                    <small>{element3}  Ashulia</small>
+                    <p>Savar Dhaka 1230</p>
 
                 </div>
 
@@ -36,7 +36,7 @@ const Footer = () => {
                     Common Questions
                     Report a Bug
                     Get Help <br /> <br /> <br />
-                    <p> NABID 2021 © . All rights reserved. </p>
+                    <p> Mamun 2021 © . All rights reserved. </p>
                 </div>
             </div>
         </div>
